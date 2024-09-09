@@ -1,11 +1,11 @@
-// "use strict";
+"use strict";
 
-// module.exports = class carRegister {
-//   #register;
-//   constructor(data) {
-//     if (!data) {
-//       throw new Error("data storage missing");
-//     }
-//     this.#register = data;
-//   }
-// };
+module.exports = class carRegister {
+  #register;
+  constructor(data) {
+    if (!data) {
+      throw new Error("data storage missing");
+    }
+    this.#register = data;
+  }
+};
