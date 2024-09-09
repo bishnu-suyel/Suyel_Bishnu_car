@@ -1,0 +1,57 @@
+[
+  {
+    "number": 1,
+    "model": "VIP",
+    "price": 300,
+    "power": 130,
+    "colors": ["white", "yellow", "blue"],
+    "info": {
+      "consumptionPer100km": 1,
+      "comments": "low emission",
+      "powerSource": "pushing"
+    }
+  },
+  {
+    "number": 2,
+    "model": "silver",
+    "price": 36,
+    "power": 100,
+    "colors": ["white", "blue", "yellow"],
+    "info": {
+      "consumptionPer100km": 4,
+      "comments": "-",
+      "powerSource": "hybrid"
+    }
+  },
+  {
+    "number": 3,
+    "model": "XXL",
+    "price": 123,
+    "power": 10,
+    "colors": ["white", "yellow", "orange"],
+    "info": {
+      "consumptionPer100km": 6,
+      "comments": "low emission",
+      "powerSource": "pushing"
+    }
+  },
+  {
+    "number": 4,
+    "model": "chrome",
+    "price": 10,
+    "power": 250,
+    "colors": ["orange", "white", "yellow"],
+    "info": {
+      "consumptionPer100km": 2,
+      "comments": "-",
+      "powerSource": "pushing"
+    }
+  },
+  {
+    "number": 5,
+    "model": "silver",
+    "price": 123,
+    "power": 1,
+    "colors": ["red", "black", "orange"]
+  }
+]
