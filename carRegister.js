@@ -10,7 +10,7 @@ module.exports = class carRegister {
   }
 
   // Start of getTotalPriceOfCarsByModel
-  getTotalPriceOfCarsByModel(searchValue){
+  getTotalPriceOfCarsByModel(searchValue) {
     if (!searchValue) {
       throw new Error("missing parameter");
     }
@@ -31,4 +31,28 @@ module.exports = class carRegister {
   // End of getTotalPriceOfCarsByModel
 
   // Start of getInfo
+   getInfo(searchKey) {
+    // Ensure searchKey is not empty
+    if (!searchKey) {
+      throw new Error("missing parameter");
+    }
+
+    // Find the matching entry based on the 'number' property
+    const result = this.#register.find(
+      (car) => car.number === parseInt(searchKey, 10)
+    );
+
+    // If no result is found, throw an error
+    if (!result) {
+      throw new Error("nothing found with given searchKey");
+    }
+
+    // Check if the 'info' field exists for the found car
+    if (!result.info) {
+      throw new Error("No information available for this car");
+    }
+
+    // Return only the 'info' field
+    return result.info;
+  }
 };
