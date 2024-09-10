@@ -68,7 +68,7 @@ expect
 []
 ```
 
-### Test 3: empty searchKey
+### Test 4: empty searchKey
 Test uses the default data.
 
 Create register with default data.
@@ -80,3 +80,17 @@ expect
 ```json
 []
 ```
+
+### Test 5: searchKey 5 with no info
+Test uses the default data.
+
+Create register with default data.
+```js
+const register = new carRegister(defaultData);
+register.getInfo(''),
+```
+expect
+```json
+[]
+```
+
