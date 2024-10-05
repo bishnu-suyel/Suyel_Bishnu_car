@@ -13,8 +13,8 @@ For example `3` returns
     }}
     ]
 ```
-If no car with the given searchKey is found throws an exeption `'nothing found with given searchkey'`.
-If a parameter searchKey is missing, an exeption `'missing parameter'` is thrown.
+If no car with the given searchKey is found returns a null.
+If a parameter searchKey is missing, null will be returned.
 
 ### Test 1: searchKey 1
 Test uses the default data.
@@ -65,7 +65,7 @@ register.getInfo('x'),
 ```
 expect
 ```json
-[]
+null
 ```
 
 ### Test 4: empty searchKey
@@ -78,7 +78,7 @@ register.getInfo(''),
 ```
 expect
 ```json
-[]
+null
 ```
 
 ### Test 5: searchKey 5 with no info
@@ -91,6 +91,6 @@ register.getInfo(''),
 ```
 expect
 ```json
-[]
+null
 ```
 
