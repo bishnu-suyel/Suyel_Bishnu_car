@@ -78,7 +78,7 @@ describe("Test cases for getInfo", () => {
 
 // Start of getCarColors
 describe("Test cases for getCarColors", () => {
-  test("should return colors for a valid car number (searchKey 1)", () => {
+  test("Test 1: searchKey 1", () => {
     const register = new carRegister(defaultData);
     const expectedResult = [
       "white", "yellow", "blue"
@@ -86,13 +86,18 @@ describe("Test cases for getCarColors", () => {
     expect(register.getCarColors(1)).toEqual(expectedResult);
   });
 
-  test("should return an empty array for a non-existing car number (searchKey 6)", () => {
+  test("Test 2: searchKey 5", () => {
+    const register = new carRegister(defaultData);
+    expect(register.getCarColors(5)).toEqual(["red", "black", "orange"]);
+  });
+
+  test("Test 3: wrong search key/non-existing car number (searchKey 6)", () => {
     const register = new carRegister(defaultData);
    expect(register.getCarColors("6")).toEqual([]); 
   });
 
   
-  test("should return an empty array when searchKey is missing", () => {
+  test("Test 4: searchKey is missing", () => {
     const register = new carRegister(defaultData);
     expect(register.getCarColors("")).toEqual([]);
   });
