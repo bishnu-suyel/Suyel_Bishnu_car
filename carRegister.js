@@ -34,7 +34,7 @@ module.exports = class carRegister {
    getInfo(searchKey) {
     // Ensure searchKey is not empty
     if (!searchKey) {
-      throw new Error("missing parameter");
+      return null;
     }
 
     // Find the matching entry based on the 'number' property
@@ -44,15 +44,39 @@ module.exports = class carRegister {
 
     // If no result is found, throw an error
     if (!result) {
-      throw new Error("nothing found with given searchKey");
+      return null;
     }
 
     // Check if the 'info' field exists for the found car
     if (!result.info) {
-      throw new Error("No information available for this car");
+      return null;
     }
 
     // Return only the 'info' field
     return result.info;
+  };
+
+// End of getInfo
+
+// Start of getCarColors
+getCarColors(searchKey){
+  // If searchKey is undefined or null, return an empty array
+  if (searchKey === undefined || searchKey === null) {
+    return [];
   }
+
+  // Find the car with the given searchKey (car number)
+  const car = this.#register.find((car) => car.number === searchKey);
+
+  // If no car is found, return an empty array
+  if (!car) {
+    return [];
+  };
+
+  // Return the colors of the found car, or an empty array if none exist
+  return car.colors || [];
 };
+};
+
+// End of getCarColors
+
