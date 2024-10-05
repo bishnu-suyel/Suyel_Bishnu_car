@@ -45,7 +45,7 @@ describe("Test cases for getInfo", () => {
       comments: "low emission",
       powerSource: "pushing",
     };
-    expect(register.getInfo("1")).toEqual(expectedResult);
+    expect(register.getInfo(1)).toEqual(expectedResult);
   });
 
   test("Test 2: searchKey 2", () => {
@@ -55,25 +55,46 @@ describe("Test cases for getInfo", () => {
       comments: "-",
       powerSource: "hybrid",
     };
-    expect(register.getInfo("2")).toEqual(expectedResult);
+    expect(register.getInfo(2)).toEqual(expectedResult);
   });
 
   test("Test 3: wrong searchKey", () => {
     const register = new carRegister(defaultData);
-    expect(() => register.getInfo("10")).toThrow(
-      "nothing found with given searchKey");
+    expect(register.getInfo("10")).toBeNull();
   });
 
   test("Test 4: empty searchKey", () => {
     const register = new carRegister(defaultData);
-    expect(() => register.getInfo("")).toThrow("missing parameter");
+    expect(register.getInfo("")).toBeNull();
   });
 
   test("Test 5: searchKey 5 (no info field)", () => {
     const register = new carRegister(defaultData);
-    expect(() => register.getInfo("5")).toThrow(
-      "No information available for this car");
+    expect(register.getInfo("5")).toBeNull();
   });
 });
 
 // End of getInfo
+
+// Start of getCarColors
+describe("Test cases for getCarColors", () => {
+  test("should return colors for a valid car number (searchKey 1)", () => {
+    const register = new carRegister(defaultData);
+    const expectedResult = [
+      "white", "yellow", "blue"
+    ];
+    expect(register.getCarColors(1)).toEqual(expectedResult);
+  });
+
+  test("should return an empty array for a non-existing car number (searchKey 6)", () => {
+    const register = new carRegister(defaultData);
+   expect(register.getCarColors("6")).toEqual([]); 
+  });
+
+  
+  test("should return an empty array when searchKey is missing", () => {
+    const register = new carRegister(defaultData);
+    expect(register.getCarColors("")).toEqual([]);
+  });
+});
+// End of getCarColors
