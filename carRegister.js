@@ -31,7 +31,7 @@ module.exports = class carRegister {
   // End of getTotalPriceOfCarsByModel
 
   // Start of getInfo
-   getInfo(searchKey) {
+  getInfo(searchKey) {
     // Ensure searchKey is not empty
     if (!searchKey) {
       return null;
@@ -42,7 +42,7 @@ module.exports = class carRegister {
       (car) => car.number === parseInt(searchKey, 10)
     );
 
-    // If no result is found, throw an error
+    // If no result is found, return null
     if (!result) {
       return null;
     }
@@ -54,50 +54,72 @@ module.exports = class carRegister {
 
     // Return only the 'info' field
     return result.info;
-  };
-
-// End of getInfo
-
-// Start of getCarColors
-getCarColors(searchKey){
-  // If searchKey is undefined or null, return an empty array
-  if (searchKey === undefined || searchKey === null) {
-    return [];
   }
 
-  // Find the car with the given searchKey (car number)
-  const car = this.#register.find((car) => car.number === searchKey);
+  // End of getInfo
 
-  // If no car is found, return an empty array
-  if (!car) {
-    return [];
-  };
+  // Start of getCarColors
+  getCarColors(searchKey) {
+    // If searchKey is undefined or null, return an empty array
+    if (searchKey === undefined || searchKey === null) {
+      return [];
+    }
 
-  // Return the colors of the found car, or an empty array if none exist
-  return car.colors || [];
-};
+    // Find the car with the given searchKey (car number)
+    const car = this.#register.find((car) => car.number === searchKey);
 
-// End of getCarColors
+    // If no car is found, return an empty array
+    if (!car) {
+      return [];
+    }
 
-// Start of getPrice(number)
-getPrice(number){
-  // If searchKey is undefined or null, return an empty array
-  if (number === undefined || number === null) {
-    throw new Error ("missing parameter");
+    // Return the colors of the found car, or an empty array if none exist
+    return car.colors || [];
   }
 
-  // Find the car with the given searchKey (car number)
-  const car = this.#register.find((car) => car.number === number);
+  // End of getCarColors
 
-  // If no car is found, return an empty array
-  if (!car) {
-    throw new Error ("nothing found with given number");
+  // Start of getPrice(number)
+  getPrice(number) {
+    // If number is undefined or null, throw error missing parameter
+    if (number === undefined || number === null) {
+      throw new Error("missing parameter");
+    }
+
+    // Find the car with the given number (car number)
+    const car = this.#register.find((car) => car.number === number);
+
+    // If no car is found, throw error
+    if (!car) {
+      throw new Error("nothing found with given number");
+    }
+
+    // Return the price of the found car, or an empty array if none exist
+    return car.price || [];
+  }
+  // End of getPrice(number)
+
+  //Start of getHasInfo
+ getHasInfo(searchKey) {
+    // If searchKey is undefined, null, or not a number, return false
+    if (searchKey === undefined || searchKey === null || isNaN(searchKey)) {
+      return false;
+    }
+
+    // Find the car with the given searchKey (car number)
+    const car = this.#register.find((car) => car.number === parseInt(searchKey, 10));
+
+    // If no car is found, or if the car doesn't have an 'info' field, return false
+    if (!car || !car.info) {
+      return false;
+    }
+
+    // Return true if the car has an 'info' field
+    return true;
   };
 
-  // Return the colors of the found car, or an empty array if none exist
-  return car.price || [];
+  //End of getHasInfo
 };
-};
+// End of class
 
-// End of getPrice(number)
 
