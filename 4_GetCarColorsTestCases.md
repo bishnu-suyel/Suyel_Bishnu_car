@@ -1,6 +1,6 @@
 # Test cases for getCarColors
 
-### **get_car_colors(searchKey)**
+### **getCarColors(searchKey)**
 This methods returns an array of car colors with the given searchKey. 
 
 For example `1` returns

@@ -13,8 +13,9 @@ For example `3` returns
     }}
     ]
 ```
-If no car with the given searchKey is found returns a null.
+If no car with the given searchKey(or wrong searchKey) is found returns a null.
 If a parameter searchKey is missing, null will be returned.
+If the car with the given searchKey has no info returns a null.
 
 ### Test 1: searchKey 1
 Test uses the default data.
