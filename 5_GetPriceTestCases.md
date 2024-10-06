@@ -1,13 +1,13 @@
 # Test cases for getPrice
 
 ### **getPrice(number)**
-This methods returns a array of the price of a car with the given number.
+This methods returns the price of a car with the given number.
 
 For example `1` returns
 ```json
- [
+ 
     300
-]
+
 ```
 If no car with the given number is found throws an exeption `'nothing found with given number'`
 If a parameter number is missing, throws an exeption `'missing parameter'`
@@ -18,13 +18,13 @@ Test uses the default data.
 Create register with default data.
 ```js
 const register = new carRegister(defaultData);
-register.getPrice(number)(1);
+register.getPrice(1);
 ```
 expect
 ```json
-[
+
     300
-]
+
 ```
 to be returned
 
@@ -34,7 +34,7 @@ Test uses the default data.
 Create register with default data.
 ```js
 const register = new carRegister(defaultData);
-register.getPrice(number)(6);
+register.getPrice(6);
 ```
 throws an exeption `'nothing found with given number'`
 
@@ -44,6 +44,6 @@ Test uses the default data.
 Create register with default data.
 ```js
 const register = new carRegister(defaultData);
-register.getPrice(number)();
+register.getPrice();
 ```
 throws an exeption `'missing parameter'`
