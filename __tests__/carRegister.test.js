@@ -108,23 +108,22 @@ describe("Test cases for getCarColors", () => {
 describe("Test cases for getPrice(number)", () => {
   test("Test 1: number 1", () => {
     const register = new carRegister(defaultData);
-    const expectedResult = 
-      300
-    ;
+    const expectedResult = 300;
     expect(register.getPrice(1)).toEqual(expectedResult);
   });
 
   test("Test 2: number 6 (Non-existing car)", () => {
     const register = new carRegister(defaultData);
-     expect(() => register.getPrice(6)).toThrow(
-       "nothing found with given number"
-     );
+    expect(() => register.getPrice(6)).toThrow(
+      "nothing found with given number"
+    );
   });
-  
+
   test("Test 3: missing parameter", () => {
     const register = new carRegister(defaultData);
-     expect(() => register.getPrice()).toThrow(
-       "missing parameter"
-     );
+    expect(() => register.getPrice()).toThrow("missing parameter");
   });
+  // End of getPrice(number)
+
+  
 });
