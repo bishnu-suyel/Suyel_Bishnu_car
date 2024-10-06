@@ -76,7 +76,28 @@ getCarColors(searchKey){
   // Return the colors of the found car, or an empty array if none exist
   return car.colors || [];
 };
-};
 
 // End of getCarColors
+
+// Start of getPrice(number)
+getPrice(number){
+  // If searchKey is undefined or null, return an empty array
+  if (number === undefined || number === null) {
+    throw new Error ("missing parameter");
+  }
+
+  // Find the car with the given searchKey (car number)
+  const car = this.#register.find((car) => car.number === number);
+
+  // If no car is found, return an empty array
+  if (!car) {
+    throw new Error ("nothing found with given number");
+  };
+
+  // Return the colors of the found car, or an empty array if none exist
+  return car.price || [];
+};
+};
+
+// End of getPrice(number)
 
