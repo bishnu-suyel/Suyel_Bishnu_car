@@ -5,7 +5,7 @@ Methods returns an array of total price of all cars `300` belonging to given (se
 
 For example `silver` returns 
 ```json
-[159] //Adding the prices of all the models of silver i.e 36+123.
+159 //Adding the prices of all the models of silver i.e 36+123.
 ```
 
 If no car with the given searchValue is  found throws an exeption `'nothing found with given searchValue'`.
@@ -22,7 +22,7 @@ register.getTotalPriceOfCarsByModel('VIP');
 ```
 expect
 ```json
-[300]
+300
 ```
  to be returned
 
@@ -36,10 +36,10 @@ register.getTotalPriceOfCarsByModel('silver');
 ```
  expect
  ```json
- [159] //Adding the prices of all the models of silver i.e 36+123.
+ 159 //Adding the prices of all the models of silver i.e 36+123.
  ```
  to be returned
- 
+
 ### Test 3: nothing found with given searchValue
 Test uses the default data
 
