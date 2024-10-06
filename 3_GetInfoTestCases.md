@@ -22,7 +22,7 @@ Test uses the default data.
 Create register with default data.
 ```js
 const register = new carRegister(defaultData);
-register.getInfo('3'),
+register.getInfo(3),
 ```
 expect
 ```json
@@ -42,7 +42,7 @@ Test uses the default data.
 Create register with default data.
 ```js
 const register = new carRegister(defaultData);
-register.getInfo('2'),
+register.getInfo(2),
 ```
 expect
 ```json

@@ -19,7 +19,7 @@ Test uses the default data.
 Create register with default data.
 ```js
 const register = new carRegister(defaultData);
-register.get_car_colors('1');
+register.getCarColors(1);
 ```
 expect
 ```json
@@ -29,26 +29,43 @@ expect
 ```
 to be returned
 
-### Test 2: searchKey 6 (Non-existing car)
+### Test 2: searchKey 5
 Test uses the default data.
 
 Create register with default data.
 ```js
 const register = new carRegister(defaultData);
-register.get_car_colors('6');
+register.getCarColors(5);
+```
+expect
+```json
+[
+    "red", "black", "orange"
+]
+```
+to be returned
+
+
+### Test 3: searchKey 6 (Non-existing car)
+Test uses the default data.
+
+Create register with default data.
+```js
+const register = new carRegister(defaultData);
+register.getCarColors(6);
 ```
 expect
 ```json
 []
 ```
 
-### Test 3: empty searchKey
+### Test 4: empty searchKey
 Test uses the default data.
 
 Create register with default data.
 ```js
 const register = new carRegister(defaultData);
-register.get_car_colors('');
+register.getCarColors('');
 ```
 expect
 ```json
