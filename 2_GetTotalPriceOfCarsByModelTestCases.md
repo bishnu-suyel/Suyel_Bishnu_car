@@ -38,6 +38,8 @@ register.getTotalPriceOfCarsByModel('silver');
  ```json
  [159] //Adding the prices of all the models of silver i.e 36+123.
  ```
+ to be returned
+ 
 ### Test 3: nothing found with given searchValue
 Test uses the default data
 
@@ -46,10 +48,8 @@ Create register with default data.
 const register = new carRegister(defaultData);
 register.getTotalPriceOfCarsByModel('x');
 ```
-expect
-```json
-[]
-```
+throws an exeption `'nothing found with given searchValue'`
+
 ### Test 4: missing parameter
 Test uses the default data
 
@@ -58,7 +58,4 @@ Create register with default data.
 const register = new carRegister(defaultData);
 register.getTotalPriceOfCarsByModel('');
 ```
-expect
-```json
-[]
-```
+an exeption `'missing parameter'` is thrown

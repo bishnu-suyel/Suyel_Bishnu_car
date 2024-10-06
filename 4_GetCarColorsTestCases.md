@@ -58,6 +58,7 @@ expect
 ```json
 []
 ```
+to be returned
 
 ### Test 4: empty searchKey
 Test uses the default data.
@@ -71,3 +72,4 @@ expect
 ```json
 []
 ```
+to be returned

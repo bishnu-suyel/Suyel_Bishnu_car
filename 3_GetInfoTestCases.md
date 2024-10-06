@@ -56,6 +56,8 @@ expect
     {}
     ]
 ```
+to be returned
+
 ### Test 3: wrong searchKey
 Test uses the default data.
 
@@ -64,10 +66,7 @@ Create register with default data.
 const register = new carRegister(defaultData);
 register.getInfo('x'),
 ```
-expect
-```json
-null
-```
+return `null`
 
 ### Test 4: empty searchKey
 Test uses the default data.
@@ -77,10 +76,7 @@ Create register with default data.
 const register = new carRegister(defaultData);
 register.getInfo(''),
 ```
-expect
-```json
-null
-```
+return `null`
 
 ### Test 5: searchKey 5 with no info
 Test uses the default data.
@@ -90,8 +86,6 @@ Create register with default data.
 const register = new carRegister(defaultData);
 register.getInfo(''),
 ```
-expect
-```json
-null
-```
+return `null`
+
 
