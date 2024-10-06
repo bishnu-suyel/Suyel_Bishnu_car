@@ -60,7 +60,7 @@ describe("Test cases for getInfo", () => {
 
   test("Test 3: wrong searchKey", () => {
     const register = new carRegister(defaultData);
-    expect(register.getInfo("10")).toBeNull();
+    expect(register.getInfo(10)).toBeNull();
   });
 
   test("Test 4: empty searchKey", () => {
@@ -70,7 +70,7 @@ describe("Test cases for getInfo", () => {
 
   test("Test 5: searchKey 5 (no info field)", () => {
     const register = new carRegister(defaultData);
-    expect(register.getInfo("5")).toBeNull();
+    expect(register.getInfo(5)).toBeNull();
   });
 });
 
@@ -93,7 +93,7 @@ describe("Test cases for getCarColors", () => {
 
   test("Test 3: wrong search key/non-existing car number (searchKey 6)", () => {
     const register = new carRegister(defaultData);
-   expect(register.getCarColors("6")).toEqual([]); 
+   expect(register.getCarColors(6)).toEqual([]); 
   });
 
   
@@ -103,3 +103,28 @@ describe("Test cases for getCarColors", () => {
   });
 });
 // End of getCarColors
+
+// Start of getPrice(number)
+describe("Test cases for getPrice(number)", () => {
+  test("Test 1: number 1", () => {
+    const register = new carRegister(defaultData);
+    const expectedResult = 
+      300
+    ;
+    expect(register.getPrice(1)).toEqual(expectedResult);
+  });
+
+  test("Test 2: number 6 (Non-existing car)", () => {
+    const register = new carRegister(defaultData);
+     expect(() => register.getPrice(6)).toThrow(
+       "nothing found with given number"
+     );
+  });
+  
+  test("Test 3: missing parameter", () => {
+    const register = new carRegister(defaultData);
+     expect(() => register.getPrice()).toThrow(
+       "missing parameter"
+     );
+  });
+});
