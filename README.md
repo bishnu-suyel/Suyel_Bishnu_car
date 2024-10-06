@@ -53,7 +53,7 @@ GitHub Guides - Mastering Markdown
 Jest Documentation - Learn more about Jest testing framework.
 
 ### Authors and Acknowledgment
-- [GitHub @Bis10](https://github.com/bis10)
+- [GitHub @bishnu-suyel](https://github.com/bishnu-suyel)
 - [LinkedIn @bishnu-suyel](https://www.linkedin.com/in/bishnu-suyel)
 
 ### Assigner/Evaluator 
