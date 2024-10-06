@@ -123,7 +123,29 @@ describe("Test cases for getPrice(number)", () => {
     const register = new carRegister(defaultData);
     expect(() => register.getPrice()).toThrow("missing parameter");
   });
+});
   // End of getPrice(number)
 
-  
-});
+  //Start of getHasInfo
+  describe("Test cases for getHasInfo", () => {
+    test("Test 1: searchKey 1", () => {
+      const register = new carRegister(defaultData);
+      expect(register.getHasInfo(1)).toEqual(true);
+    });
+
+    test("Test 2: searchKey 5", () => {
+      const register = new carRegister(defaultData);
+       expect(register.getHasInfo(5)).toEqual(false);
+    });
+
+    test("Test 3: missing parameter", () => {
+      const register = new carRegister(defaultData);
+       expect(register.getHasInfo()).toEqual(false);
+    });
+
+    test("Test 4: searchKey should be a number", () => {
+    const register = new carRegister(defaultData);
+    expect(register.getHasInfo("abc")).toEqual(false);
+    });
+    //End of getHasInfo
+  });
