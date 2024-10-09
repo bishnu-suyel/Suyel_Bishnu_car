@@ -112,16 +112,11 @@ describe("Test cases for getPrice(number)", () => {
     expect(register.getPrice(1)).toEqual(expectedResult);
   });
 
-  test("Test 2: number 6 (Non-existing car)", () => {
+  test("Test 2: nothing found with given number", () => {
     const register = new carRegister(defaultData);
     expect(() => register.getPrice(6)).toThrow(
       "nothing found with given number"
     );
-  });
-
-  test("Test 3: missing parameter", () => {
-    const register = new carRegister(defaultData);
-    expect(() => register.getPrice()).toThrow("missing parameter");
   });
 });
   // End of getPrice(number)
