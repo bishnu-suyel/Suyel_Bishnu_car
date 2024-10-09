@@ -81,16 +81,10 @@ module.exports = class carRegister {
 
   // Start of getPrice(number)
   getPrice(number) {
-    // If number is undefined or null, throw error missing parameter
-    if (number === undefined || number === null) {
-      throw new Error("missing parameter");
-    }
-
-    // Find the car with the given number (car number)
     const car = this.#register.find((car) => car.number === number);
 
-    // If no car is found, throw error
-    if (!car) {
+    // If number is undefined, null, or no car is found, throw error nothing found with given number
+    if (number === undefined || number === null || !car) {
       throw new Error("nothing found with given number");
     }
 
@@ -100,14 +94,16 @@ module.exports = class carRegister {
   // End of getPrice(number)
 
   //Start of getHasInfo
- getHasInfo(searchKey) {
+  getHasInfo(searchKey) {
     // If searchKey is undefined, null, or not a number, return false
     if (searchKey === undefined || searchKey === null || isNaN(searchKey)) {
       return false;
     }
 
     // Find the car with the given searchKey (car number)
-    const car = this.#register.find((car) => car.number === parseInt(searchKey, 10));
+    const car = this.#register.find(
+      (car) => car.number === parseInt(searchKey, 10)
+    );
 
     // If no car is found, or if the car doesn't have an 'info' field, return false
     if (!car || !car.info) {
@@ -116,7 +112,7 @@ module.exports = class carRegister {
 
     // Return true if the car has an 'info' field
     return true;
-  };
+  }
 
   //End of getHasInfo
 };
