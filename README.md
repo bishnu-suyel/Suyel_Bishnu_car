@@ -49,8 +49,9 @@ No any
 No any
 
 ### Sources
-GitHub Guides - Mastering Markdown
-Jest Documentation - Learn more about Jest testing framework.
+- [GitHub Guides - Mastering Markdown](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
+- [Make a README](https://www.makeareadme.com/)
+- [Jest Documentation - Learn more about Jest testing framework](https://jestjs.io/docs/getting-started)
 
 ### Authors and Acknowledgment
 - [GitHub @bishnu-suyel](https://github.com/bishnu-suyel)
