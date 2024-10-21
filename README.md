@@ -25,7 +25,7 @@ Built with:
 1. Clone the repository to your local machine:
 
     ```bash
-    git clone https://github.com/bis10/Suyel_Bishnu_car.git
+    git clone https://github.com/bishnu-suyel/Suyel_Bishnu_car.git
     ```
 
 2. Install dependencies:
